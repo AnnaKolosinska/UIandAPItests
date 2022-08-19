@@ -1,0 +1,5 @@
+Tests\TestInit.class
+Tests\EpicentrTest.class
+PageObjects\BasePage.class
+PageObjects\EpicentrHomePage.class
+someTry.class
