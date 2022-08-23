@@ -2,6 +2,7 @@ package PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class UkrNetHomePage extends BasePage{
@@ -33,5 +34,29 @@ public class UkrNetHomePage extends BasePage{
         waitElementToBeVisible("//section[contains(@class, 'option-month')]").click();
         waitElementToBeVisible("//li[contains(text(), 'квітня')]").click();
         waitElementToBeVisible("//input[@placeholder = 'рік']").sendKeys("2002");}
-    public void chooseSex () {waitElementToBeVisible("//input[@id = 'id-sex-f']").click();}
+    public void chooseSex () {waitElementToBeVisible("//input[@id = 'id-sex-f']/parent::div").click();}
+    public void additionalEmail (String additionalEmail) {waitElementToBeVisible("//input[@id = 'id-email']").sendKeys(additionalEmail);}
+    public void phoneNumber (String phoneNumber) {waitElementToBeVisible("//input[@id = 'id-mobile']").sendKeys(phoneNumber);}
+    public void checkAgreement () {waitElementToBeVisible("//label[@for= 'id-confirm-privacy' and contains(@class, 'checkbox__imitator')]").click();}
+
+
+    public WebElement Logo () {
+        return waitElementToBeVisible("//div[contains(@class, 'header__logo')]");}
+    public WebElement UkrainianLanguage () {
+        return waitElementToBeVisible("//span[contains(text(), 'Українська')]");}
+    public WebElement RussianLanguage () {
+        return waitElementToBeVisible("//span[contains(text(), 'Русский')]");}
+    public WebElement EnglishLanguage () {
+        return waitElementToBeVisible("//span[contains(text(), 'English')]");}
+    public WebElement SupportTitle () {
+        return waitElementToBeVisible("//h4[contains(@class, 'footer__support-title')]");}
+    public WebElement SupportEmail () {
+        return waitElementToBeVisible("//li[contains(@class, 'footer__support-item_email')]");}
+    public WebElement SupportPhone () {
+        return waitElementToBeVisible("//li[contains(@class, 'footer__support-item_phone')]");}
+    public WebElement SupportVodafone () {
+        return waitElementToBeVisible("//li[contains(@class, 'footer__support-item_vodafone')]");}
+    public WebElement SupportKiyvstar () {
+        return waitElementToBeVisible("//li[contains(@class, 'footer__support-item_kiyvstar')]");}
+
 }
