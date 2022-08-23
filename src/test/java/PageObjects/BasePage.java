@@ -11,10 +11,8 @@ import java.time.Duration;
 public class BasePage {
     public WebDriver driver;
     public BasePage(WebDriver driver) {this.driver = driver;}
-
     public WebElement findElementByXpath(String locator){
-        return driver.findElement(By.xpath(locator));
-    }
+        return driver.findElement(By.xpath(locator));}
     int BASIC_TIME = 10;
 
     public WebElement waitElementToBeVisible (String locator){
