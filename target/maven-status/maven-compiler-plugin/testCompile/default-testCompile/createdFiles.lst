@@ -1,5 +1,11 @@
 Tests\TestInit.class
 Tests\EpicentrTest.class
-PageObjects\BasePage.class
+PageObjects\AmazonHomePage.class
+Tests\TestHuawei.class
 PageObjects\EpicentrHomePage.class
+PageObjects\HuaweiHomeHage.class
+PageObjects\BasePage.class
+PageObjects\PravdaHomePage.class
 someTry.class
+Tests\TestPravda.class
+Tests\TestAmazon.class
