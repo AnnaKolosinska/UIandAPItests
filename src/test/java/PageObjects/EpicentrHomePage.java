@@ -47,12 +47,4 @@ public class EpicentrHomePage extends BasePage {
     public void clickSubscribe () {waitElementToBeVisible("//button[@tabindex= '200']").click();}
     public void clickOnInstagram () {waitElementToBeVisible("//a[@href= 'https://www.instagram.com/epicentr_ua/']").click();}
 
-
-
-
-
-
-
-
-
 }

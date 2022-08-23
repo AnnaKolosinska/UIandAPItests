@@ -75,4 +75,5 @@ public class PravdaHomePage extends BasePage{
     public void getSearchGoogle(){
         waitElementToBeVisible("//input[@id='identifierId']").sendKeys("misha333211@gmail.com\n");
     }
+
 }
