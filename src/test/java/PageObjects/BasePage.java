@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BasePage {
     public WebDriver driver;
@@ -17,7 +18,11 @@ public class BasePage {
 
     public WebElement waitElementToBeVisible (String locator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(BASIC_TIME));
-        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
-    }
+        return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));}
+
+    public List<WebElement> waitElementsToBeVisible (String locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(BASIC_TIME));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
+        return driver.findElements(By.xpath(locator));}
 
 }

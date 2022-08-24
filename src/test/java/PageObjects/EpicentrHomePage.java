@@ -1,7 +1,10 @@
 package PageObjects;
 
+import Tests.TestInit;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class EpicentrHomePage extends BasePage {
     public EpicentrHomePage(WebDriver driver) {super(driver);}
@@ -36,15 +39,52 @@ public class EpicentrHomePage extends BasePage {
     public void clearAllFilters() {waitElementToBeVisible("//div[contains(@class, 'uncheck-all')]").click();}
 
 
+        public void clickProfits () {
+            waitElementToBeVisible("//a[@title = 'Вигода']").click();
+        }
+        public void clickHowToJoin () {
+            waitElementToBeVisible("//strong[contains(text(), 'Як приєднатись')]").click();
+        }
+        public void clickQandA () {
+            waitElementToBeVisible("//strong[contains(text(), 'Питання та відповіді')]").click();
+        }
+        public void readOneAnswer () {
+            waitElementToBeVisible("//*[contains(text(), 'Що таке програма лояльності ВИГОДА?')]").click();
+        }
+        public void clickRules () {
+            waitElementToBeVisible("//strong[contains(text(), 'Правила програми')]").click();
+        }
+        public void writeEmail (String email){
+            waitElementToBeVisible("//input[@name = 'subscribe']").sendKeys(email);
+        }
+        public void clickSubscribe () {
+            waitElementToBeVisible("//button[@tabindex= '200']").click();
+        }
+        public void clickOnInstagram () {
+            waitElementToBeVisible("//a[@href= 'https://www.instagram.com/epicentr_ua/']").click();
+        }
 
 
-    public void clickProfits () {waitElementToBeVisible("//a[@title = 'Вигода']").click();}
-    public void clickHowToJoin () {waitElementToBeVisible("//strong[contains(text(), 'Як приєднатись')]").click();}
-    public void clickQandA () {waitElementToBeVisible("//strong[contains(text(), 'Питання та відповіді')]").click();}
-    public void readOneAnswer () {waitElementToBeVisible("//*[contains(text(), 'Що таке програма лояльності ВИГОДА?')]").click();}
-    public void clickRules () {waitElementToBeVisible("//strong[contains(text(), 'Правила програми')]").click();}
-    public void writeEmail (String email) {waitElementToBeVisible("//input[@name = 'subscribe']").sendKeys(email);}
-    public void clickSubscribe () {waitElementToBeVisible("//button[@tabindex= '200']").click();}
-    public void clickOnInstagram () {waitElementToBeVisible("//a[@href= 'https://www.instagram.com/epicentr_ua/']").click();}
 
+    public List<WebElement> listOfTypes () {
+        return waitElementsToBeVisible("//div[contains(@class, 'swiper-slide shop-categories__item')]");}
+
+    public void TypeChecks () {
+        TestInit testInit = new TestInit();
+        for (int i = 0; i < listOfTypes().size(); i++) {
+            listOfTypes().get(i).click();
+            testInit.sleep(2);}}
+
+    public void chooseThreeTypes () {
+        TestInit testInit = new TestInit();
+        listOfTypes().get(3).click();
+        testInit.sleep(2);
+        listOfTypes().get(5).click();
+        testInit.sleep(2);
+        listOfTypes().get(7).click();
+    }
 }
+
+
+
+
