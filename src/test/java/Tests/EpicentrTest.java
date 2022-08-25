@@ -34,6 +34,14 @@ public class EpicentrTest extends TestInit{
 //        epicentrHomePage.chooseDiagonal();
         epicentrHomePage.clearAllFilters();}
 
+        @Test
+        public void cycleTest () {
+            EpicentrHomePage epicentrHomePage = new EpicentrHomePage(driver);
+            epicentrHomePage.goToEpicentr();
+            epicentrHomePage.laptopSeatcingInField();
+//            epicentrHomePage.TypeChecks();
+            epicentrHomePage.chooseThreeTypes();
+        }
 
     @Test
     public void printChecks () {
@@ -46,6 +54,5 @@ public class EpicentrTest extends TestInit{
         epicentrHomePage.clickRules();
         epicentrHomePage.writeEmail("1234567");
         epicentrHomePage.clickSubscribe();
-        epicentrHomePage.clickOnInstagram();
-    }
+        epicentrHomePage.clickOnInstagram();}
 }
