@@ -32,7 +32,7 @@ public class OLXHomePage extends BasePage{
         waitElementToBeVisible("//input[@name='range-to-input']").sendKeys("500000\n");
     }
     public void getBuyToyota(){
-        waitElementToBeVisible("//h6[contains(text(),'Продаж авто (в розсрочку): Toyota Camry, Hyundai Sonata, KIA K5')]").click();
+        waitElementToBeVisible("//h6[contains(text(),'Toyota Camry Premium')]").click();
     }
     public void getSwipe(){
         waitElementToBeVisible("//button[@class='swiper-button-next']").click();

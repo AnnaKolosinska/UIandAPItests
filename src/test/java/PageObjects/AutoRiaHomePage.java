@@ -41,7 +41,7 @@ public class AutoRiaHomePage extends BasePage {
         waitElementToBeVisible("//button[@type='submit']").click();
     }
     public void getCar(){
-        waitElementToBeVisible("//span[text()='DAF XF 105 105.460']").click();
+        waitElementToBeVisible("//span[contains(text(),'DAF XF 105')]").click();
     }
 
     public List<WebElement> listOfElements(){

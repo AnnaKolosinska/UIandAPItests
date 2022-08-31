@@ -21,6 +21,7 @@ public class TestPravda extends TestInit{
         pravdaHomePage.getUkrBtn();
         pravdaHomePage.getSearchBtn();
         pravdaHomePage.getSearchUkraine();
+        sleep(1);
         pravdaHomePage.getPicture();
         driver.quit();
     }
