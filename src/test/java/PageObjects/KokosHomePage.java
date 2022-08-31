@@ -41,7 +41,7 @@ public class KokosHomePage extends BasePage{
         waitElementToBeVisible("//li[@class='filterMenu-i']//a[@href='/ua/samsung-phones/']").click();
     }
     public void getGb(){
-        waitElementToBeVisible("//div[@data-filter-id='5976']//a[@href='/ua/samsung-phones/filter/vstroennajaamjat1=5/']").click();
+        waitElementToBeVisible("//a[@href='/ua/samsung-phones/filter/vstroennajaamjat1=5/']").click();
     }
 
     public void getMinBtn(){

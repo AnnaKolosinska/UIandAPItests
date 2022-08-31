@@ -11,16 +11,17 @@ public class TestOLX extends TestInit{
         OLXHomePage olxHomePage = new OLXHomePage(driver);
         olxHomePage.goToOLX();
         olxHomePage.getSearch();
-        sleep(1);
+        sleep(2);
         olxHomePage.getCloseBtn();
         olxHomePage.getCity();
         olxHomePage.getTernopil();
         olxHomePage.getTernopilBtn();
         olxHomePage.getMaxPrice();
+        sleep(1);
         olxHomePage.getBuyToyota();
         olxHomePage.getSwipe();
         sleep(1);
-        olxHomePage.getSwipe2();
+        olxHomePage.getSwipe();
         driver.quit();
     }
 

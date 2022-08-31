@@ -31,10 +31,10 @@ public class PravdaHomePage extends BasePage{
         waitElementToBeVisible("//a[@class='top_options__item top_options__item_lang']//span[contains(text(),'Укр')]").click();
     }
     public void getPicture(){
-        waitElementToBeVisible("//div[@class='article article_story']//img[@src='https://img.eurointegration.com.ua/images/doc/c/c/cc5b1a3-erdogan-705_400x224.jpg']").isDisplayed();
+        waitElementToBeVisible("//a[@class='main_logo__link']//span[contains(text(),'Європейська правда')]").isDisplayed();
     }
     public void getHuiloBtn(){
-        waitElementToBeVisible("//div[@class='article_header']//a[contains(text(),'Путін програє інформаційну війну в Україні – британська розвідка')]").click();
+        waitElementToBeVisible("//div[@class='article_content_main'][1]").click();
     }
     public void getNews(){
         waitElementToBeVisible("//li[@class='top_menu__item']//a[contains(text(),'Новини')]").click();

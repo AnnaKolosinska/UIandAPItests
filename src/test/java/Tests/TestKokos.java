@@ -13,7 +13,6 @@ public class TestKokos extends TestInit{
     public void getXiaomi() {
         KokosHomePage kokosHomePage = new KokosHomePage(driver);
         Actions actions = new Actions(driver);
-
         kokosHomePage.goToKokos();
         actions.moveToElement(kokosHomePage.waitElementToBeVisible("//div[@class='products-menu__title']//a[@href='/ua/mobile-phones/']")).build().perform();
         kokosHomePage.getXiaomi();
@@ -32,11 +31,12 @@ public class TestKokos extends TestInit{
     @Test
     public void checkFilters(){
         KokosHomePage kokosHomePage = new KokosHomePage(driver);
+        JavascriptExecutor j = (JavascriptExecutor)driver;
         kokosHomePage.goToKokos();
         kokosHomePage.getMenu();
         kokosHomePage.getSamsungBtn();
-        sleep(3);
-        kokosHomePage.getGb();
+        j.executeScript("window.scrollBy(0,1200)");
+        sleep(1);
         kokosHomePage.getMinBtn();
         kokosHomePage.getMinClear();
         kokosHomePage.getMinSearch();
