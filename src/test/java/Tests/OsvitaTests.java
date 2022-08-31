@@ -1,6 +1,7 @@
 package Tests;
 
 import PageObjects.OsvitaSearchPage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
 public class OsvitaTests extends TestInit {
@@ -8,12 +9,14 @@ public class OsvitaTests extends TestInit {
     @Test
     public void CheckingTheSelectionOfFilters () {
         OsvitaSearchPage osvitaSearchPage = new OsvitaSearchPage(driver);
+        JavascriptExecutor j = (JavascriptExecutor)driver;
         osvitaSearchPage.openOsvita();
         osvitaSearchPage.chooseEducationLavel();
         osvitaSearchPage.basisOfAdmission();
         osvitaSearchPage.chooseFormOfEducation();
         sleep(3);
 //        osvitaSearchPage.closeAdvertising();
+        j.executeScript("window.scrollBy(0,300)");
         osvitaSearchPage.chooseRegion();
         osvitaSearchPage.chooseBranchOfKnowledge();
         osvitaSearchPage.chooseSpeciality();

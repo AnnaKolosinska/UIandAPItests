@@ -24,6 +24,7 @@ public class MetaTests extends TestInit {
     public void metaTranslatorTest () {
         MetaHomePage metaHomePage = new MetaHomePage(driver);
         metaHomePage.goToTranslatorPage();
+        sleep(3);
         metaHomePage.changeFirstLanguage();
         metaHomePage.changeSecondLanguage();
         metaHomePage.switchLanguages();
