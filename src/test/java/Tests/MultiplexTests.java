@@ -17,8 +17,8 @@ public class MultiplexTests extends TestInit{
         multiplexHomePage.openSideMenu();
         multiplexHomePage.changeLanguage();
         multiplexHomePage.openListOfCities();
+        sleep(3);
         multiplexHomePage.closeCityMenu();
-        multiplexHomePage.changeFormatTo3D();
         multiplexHomePage.changeHall();}
 
     @Test

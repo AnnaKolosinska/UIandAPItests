@@ -26,12 +26,12 @@ public class EpicentrTest extends TestInit{
         epicentrHomePage.goToEpicentr();
         epicentrHomePage.laptopSeatcingInField();
         epicentrHomePage.gameLaptopsChoosing();
+        sleep(3);
         epicentrHomePage.chooseAsus();
+        sleep(3);
         epicentrHomePage.chooseHP();
-//        epicentrHomePage.openFilter();
         epicentrHomePage.minPriceChange("20000");
         epicentrHomePage.maxPriceChange("100000");
-//        epicentrHomePage.chooseDiagonal();
         epicentrHomePage.clearAllFilters();}
 
         @Test
