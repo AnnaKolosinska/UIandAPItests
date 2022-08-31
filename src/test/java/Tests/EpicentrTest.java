@@ -32,6 +32,7 @@ public class EpicentrTest extends TestInit{
         epicentrHomePage.chooseHP();
         epicentrHomePage.minPriceChange("20000");
         epicentrHomePage.maxPriceChange("100000");
+        sleep(3);
         epicentrHomePage.clearAllFilters();}
 
         @Test

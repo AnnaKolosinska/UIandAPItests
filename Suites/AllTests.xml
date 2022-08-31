@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Suite1">
+
+    <test name = "Alltests">
+        <classes>
+            <class name = "Tests.EpicentrTest" />
+            <class name = "Tests.MultiplexTests" />
+            <class name = "Tests.MetaTests" />
+            <class name = "Tests.OsvitaTests" />
+            <class name = "Tests.SpotifyTests" />
+            <class name = "Tests.UkrNetTests" />
+            <class name = "APITestsAnna.NewTests" />
+
+        </classes>
+    </test>
+
+</suite>
