@@ -15,10 +15,10 @@ public class TestInit {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
-    @AfterMethod
-    public void closeDriver(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void closeDriver(){
+//        driver.quit();
+//    }
 
     public void sleep(int seconds) {
         try {
@@ -31,4 +31,7 @@ public class TestInit {
 //    public void exit(){
 //        driver.quit();
 //    }
+    public void openUrl(String URL){
+        driver.get(URL);
+    }
 }
