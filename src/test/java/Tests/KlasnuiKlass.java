@@ -1,2 +1,4 @@
-package Tests;public class KlasnuiKlass {
+package Tests;
+
+public class KlasnuiKlass {
 }
