@@ -11,10 +11,13 @@ public class KidstaffTests extends TestInit {
         KidstaffHomePage kidstaffHomePage = new KidstaffHomePage(driver);
         openUrl("https://www.kidstaff.com.ua/");
         // перевірка наявності кнопок, полів через ассерт
-        Assert.assertTrue(kidstaffHomePage.getLogoKs().isDisplayed());
         Assert.assertTrue(kidstaffHomePage.getSearchField().isDisplayed());
         Assert.assertTrue(kidstaffHomePage.getDetailSearch().isDisplayed());
         Assert.assertTrue(kidstaffHomePage.getIconProfile().isDisplayed());
+        Assert.assertTrue(kidstaffHomePage.getSovetchitsa().isDisplayed());
+        Assert.assertTrue(kidstaffHomePage.getShoppingCart().isDisplayed());
+        Assert.assertTrue(kidstaffHomePage.getRegistration().isDisplayed());
+        Assert.assertTrue(kidstaffHomePage.getLogin().isDisplayed());
 
         sleep(2);
         //приймемо кукі
@@ -48,15 +51,15 @@ public void checkPopularBrands(){
         KidstaffHomePage kidstaffHomePage = new KidstaffHomePage(driver);
         openUrl("https://www.kidstaff.com.ua/");
         kidstaffHomePage.getBtnCoockies().click();
-
-//        kidstaffHomePage.getPopularBrandsGeox().click();
-//        kidstaffHomePage.getLogoKs().click();
-//        kidstaffHomePage.getPopularBrandsCrocks().click();
-//        kidstaffHomePage.getLogoKs().click();
-//        kidstaffHomePage.getPopularBrandsEcco().click();
-//        kidstaffHomePage.getLogoKs().click();
-//        kidstaffHomePage.getPopularBrandsLCWaikiki().click();
-//        kidstaffHomePage.goBack();
+//Популярні бренди, перевірка кнопок
+       kidstaffHomePage.getPopularBrandsGeox().click();
+       kidstaffHomePage.getLogoKs().click();
+       kidstaffHomePage.getPopularBrandsCrocks().click();
+       kidstaffHomePage.getLogoKs().click();
+       kidstaffHomePage.getPopularBrandsEcco().click();
+       kidstaffHomePage.getLogoKs().click();
+       kidstaffHomePage.getPopularBrandsLCWaikiki().click();
+       kidstaffHomePage.goBack();
 
         //те саме, через цикл
         kidstaffHomePage.clickOnBrands();
