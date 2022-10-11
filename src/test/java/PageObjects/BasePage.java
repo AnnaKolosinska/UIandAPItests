@@ -26,3 +26,4 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));}
 
 }
+
