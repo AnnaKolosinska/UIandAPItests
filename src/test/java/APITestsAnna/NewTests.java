@@ -29,10 +29,11 @@ public class NewTests {
         Assert.assertNotNull(successfulCreation.getCreatedAt());
         Assert.assertEquals(name, successfulCreation.getName());
         Assert.assertEquals(job, successfulCreation.getJob());
-        Assert.assertTrue(successfulCreation.createdAt.contains("2022"));}
+        Assert.assertTrue(successfulCreation.createdAt.contains("2022"));
+    }
 
     @Test
-    public void SuccessLogin () {
+    public void SuccessLogin() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecOK200());
         LoginUser user = new LoginUser("eve.holt@reqres.in", "cityslicka");
         SuccessfulLogin successfulLogin = given()
@@ -42,7 +43,8 @@ public class NewTests {
                 .then().log().all()
                 .extract().as(SuccessfulLogin.class);
         Assert.assertNotNull(successfulLogin.getToken());
-        Assert.assertTrue(successfulLogin.getToken().contains("QpwL5tke"));}
+        Assert.assertTrue(successfulLogin.getToken().contains("QpwL5tke"));
+    }
 
     @Test
     public void unSuccessLogin() {
@@ -54,11 +56,12 @@ public class NewTests {
                 .then().log().all()
                 .extract().as(UnSuccessLogin.class);
         Assert.assertNotNull(unSuccessLogin.getError());
-        Assert.assertEquals(unSuccessLogin.getError(), "Missing password");}
+        Assert.assertEquals(unSuccessLogin.getError(), "Missing password");
+    }
 
 
     @Test
-    public void checkColoursAndYears () {
+    public void checkColoursAndYears() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecOK200());
         List<ResourcesData> users = given()
                 .when()
@@ -72,10 +75,12 @@ public class NewTests {
         List<String> colours = users.stream().map(ResourcesData::getColor).toList();
         for (int i = 0; i < colours.size(); i++) {
             Assert.assertTrue(colours.get(i).startsWith("#"));
-            Assert.assertEquals(colours.get(i).length(), 7);}}
+            Assert.assertEquals(colours.get(i).length(), 7);
+        }
+    }
 
     @Test
-    public void updateTest () {
+    public void updateTest() {
         String name = "morpheus";
         String job = "zion resident";
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecOK200());
@@ -89,10 +94,11 @@ public class NewTests {
         Assert.assertEquals(name, user.name);
         Assert.assertEquals(job, user.job);
         Assert.assertNotNull(response.updatedAt);
-        Assert.assertTrue(response.updatedAt.contains("2022-08"));}
+        Assert.assertTrue(response.updatedAt.contains("2022-08"));
+    }
 
     @Test
-    public void getUser () {
+    public void getUser() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecOK200());
         Data user = given()
                 .when()
@@ -101,10 +107,11 @@ public class NewTests {
                 .extract().body().jsonPath().getObject("data", Data.class);
         Assert.assertTrue(user.getEmail().endsWith("reqres.in"));
         Assert.assertTrue(user.getEmail().contains("@"));
-        Assert.assertTrue(user.getAvatar().contains("2"));}
+        Assert.assertTrue(user.getAvatar().contains("2"));
+    }
 
     @Test
-    public void getResource () {
+    public void getResource() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecOK200());
         ResourcesData user = given()
                 .when()
@@ -117,15 +124,16 @@ public class NewTests {
     }
 
     @Test
-    public void UserNotFound () {
+    public void UserNotFound() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecUnique(404));
         given()
                 .when()
                 .get("/api/users/23")
-                .then().log().all();}
+                .then().log().all();
+    }
 
     @Test
-    public void delayResponseTest () {
+    public void delayResponseTest() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecOK200());
         List<Data> user = given()
                 .when()
@@ -135,14 +143,16 @@ public class NewTests {
         List<Integer> ids = user.stream().map(Data::getId).toList();
         List<Integer> sortedIds = ids.stream().sorted().toList();
         Assert.assertEquals(ids, sortedIds);
-        Assert.assertTrue(user.stream().allMatch(x->x.getAvatar().contains("http")));}
+        Assert.assertTrue(user.stream().allMatch(x -> x.getAvatar().contains("http")));
+    }
 
     @Test
-    public void deleteUser () {
+    public void deleteUser() {
         Specifications.installSpecification(Specifications.requestSpecification(URL), Specifications.responseSpecUnique(204));
         given()
                 .when()
                 .delete("/api/users/2")
-                .then().log().all();}
+                .then().log().all();
+    }
 
 }
