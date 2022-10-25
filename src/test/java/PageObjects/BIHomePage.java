@@ -29,7 +29,7 @@ public class BIHomePage extends BasePage {
     public void fieldSortByPopular(){ waitElementToBeVisible("//span[text()='за популярністю'] ").click();}
     public void getMenuHumburger(){ waitElementToBeVisible("//span[contains(@class,'i-menu3')]").click();}
     public void getMenuBento(){ waitElementToBeVisible("//span[contains(@class,'i-rings')]").click();}
-    public void fieldSortByHighPrice(){ waitElementToBeVisible("//span[text()='від дорогих до дешевих']").click();}
+    public void fieldSortByHighPrice(){ waitElementToBeVisible("//li/span[text()='від дорогих до дешевих']").click();}
     public void fieldSortByLowPrice(){ waitElementToBeVisible("//span[text()='від дешевих до дорогих']").click();}
     public void fieldSortByNew(){ waitElementToBeVisible("//span[text()='по новизні']").click();}
 
