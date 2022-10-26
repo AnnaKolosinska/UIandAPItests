@@ -54,7 +54,7 @@ public class KidstaffTests extends TestInit {
         openUrl("https://www.kidstaff.com.ua/");
         kidstaffHomePage.getBtnCoockies().click();
 //Популярні бренди, перевірка кнопок
-
+//внесли зміни scroll
         kidstaffHomePage.getPopularBrandsGeox().click();
         kidstaffHomePage.getLogoKs().click();
         sleep(2);
@@ -70,8 +70,9 @@ public class KidstaffTests extends TestInit {
         kidstaffHomePage.getPopularBrandsLCWaikiki().click();
         kidstaffHomePage.goBack();
 
-        //те саме, через цикл
+        //те саме, через цикл шз змінами
         kidstaffHomePage.clickOnBrands();
+
     }
 }
 
