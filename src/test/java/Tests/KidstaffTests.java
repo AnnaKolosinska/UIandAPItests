@@ -1,6 +1,7 @@
 package Tests;
 
 import PageObjects.KidstaffHomePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -37,32 +38,41 @@ public class KidstaffTests extends TestInit {
         //Actions action = new Actions(driver);
 
         openUrl("https://www.kidstaff.com.ua/");
-// для кожного нового користувача до прийняття кукі перемикач мов
+        //для кожного нового користувача до прийняття кукі перемикач мов
         kidstaffHomePage.getLanguageSwitcherRu().click();
         sleep(4);
         kidstaffHomePage.getLanguageSwitcherUa().click();
         //для кожного нового юзера з'являється кнопка прийняти кукі, кожен раз при запуску теста.
         kidstaffHomePage.getBtnCoockies().click();
-               // Без прийняття кукі (клік на кнопку) тест (клік на світчер мови) падає.
+        // Без прийняття кукі (клік на кнопку) тест (клік на світчер мови) падає.
         kidstaffHomePage.getLanguageSwitcher().click();
     }
+
     @Test
-public void checkPopularBrands(){
+    public void checkPopularBrands() {
         KidstaffHomePage kidstaffHomePage = new KidstaffHomePage(driver);
         openUrl("https://www.kidstaff.com.ua/");
         kidstaffHomePage.getBtnCoockies().click();
 //Популярні бренди, перевірка кнопок
-       kidstaffHomePage.getPopularBrandsGeox().click();
-       kidstaffHomePage.getLogoKs().click();
-       kidstaffHomePage.getPopularBrandsCrocks().click();
-       kidstaffHomePage.getLogoKs().click();
-       kidstaffHomePage.getPopularBrandsEcco().click();
-       kidstaffHomePage.getLogoKs().click();
-       kidstaffHomePage.getPopularBrandsLCWaikiki().click();
-       kidstaffHomePage.goBack();
+//внесли зміни scroll
+        kidstaffHomePage.getPopularBrandsGeox().click();
+        kidstaffHomePage.getLogoKs().click();
+        sleep(2);
+        kidstaffHomePage.scroll(1800);
+        kidstaffHomePage.getPopularBrandsCrocs().click();
+        kidstaffHomePage.scroll(1800);
+        kidstaffHomePage.getLogoKs().click();
+        kidstaffHomePage.scroll(1800);
+        kidstaffHomePage.getPopularBrandsEcco().click();
+        kidstaffHomePage.scroll(1800);
+        kidstaffHomePage.getLogoKs().click();
+        kidstaffHomePage.scroll(1800);
+        kidstaffHomePage.getPopularBrandsLCWaikiki().click();
+        kidstaffHomePage.goBack();
 
-        //те саме, через цикл
+        //те саме, через цикл шз змінами
         kidstaffHomePage.clickOnBrands();
+
     }
 }
 

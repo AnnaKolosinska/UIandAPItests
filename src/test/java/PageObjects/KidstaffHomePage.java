@@ -2,6 +2,7 @@ package PageObjects;
 
 import Tests.TestInit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -28,7 +29,7 @@ public class KidstaffHomePage extends BasePage {
     public WebElement getLanguageSwitcher(){return waitElementToBeVisible("//a[@class='js-changelang']");}
     public WebElement getBtnCoockies(){return waitElementToBeVisible("//button[@id='js_set_gdpr_cookie']");}
     public WebElement getPopularBrandsGeox (){return waitElementToBeVisible("//a[@class='tag is-warning'][text()='Geox']");}
-    public WebElement getPopularBrandsCrocks (){return waitElementToBeVisible("//a[@class='tag is-warning'][text()='Crocs']");}
+    public WebElement getPopularBrandsCrocs (){return waitElementToBeVisible("//div[@class='tags are-medium']/a[@class='tag is-warning'][text()='Crocs']");}
     public WebElement getPopularBrandsEcco(){return waitElementToBeVisible("//a[@class='tag is-warning'][text()='Ecco']");}
     public WebElement getPopularBrandsLCWaikiki(){return waitElementToBeVisible("//a[@class='tag is-warning'][text()='LC Waikiki']");}
 
@@ -39,11 +40,17 @@ public class KidstaffHomePage extends BasePage {
 
     public void clickOnBrands () {
         TestInit testInit = new TestInit();
-        for (int i = 0; i < packOfBrands().size()-1; i++) {
+        for (int i = 0; i < packOfBrands().size() - 1; i++) {
+            scroll(1800);
             packOfBrands().get(i).click();
             testInit.sleep(3);
             driver.navigate().back();
-
         }
     }
-}
+        public void scroll (int pixels) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0," + pixels + ")", "");
+        }
+
+    }
+

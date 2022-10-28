@@ -63,10 +63,13 @@ public class BITests extends TestInit {
         sleep(1);
         biHomePage.getMenuBento();
         sleep(1);
+        biHomePage.fieldSortBy();
         biHomePage.fieldSortByHighPrice();
         sleep(1);
+        biHomePage.fieldSortBy();
         biHomePage.fieldSortByLowPrice();
         sleep(1);
+        biHomePage.fieldSortBy();
         biHomePage.fieldSortByNew();
     }
 }
