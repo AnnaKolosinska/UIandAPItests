@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class RozetkaTest extends TestInit {
     @Test
-    public void getRegistations(){
+    public void getRegistations() {
         RozetkaHomePage rozetkaHomePage = new RozetkaHomePage(driver);
         openUrl("https://rozetka.com.ua/");
         sleep(2);
@@ -21,8 +21,6 @@ public class RozetkaTest extends TestInit {
         rozetkaHomePage.putEmailField("test@test.ua");
         rozetkaHomePage.putPasswordField("Qwerty123Кен");
         rozetkaHomePage.tryRegistation();
+        driver.quit();
     }
-
-
-
 }
