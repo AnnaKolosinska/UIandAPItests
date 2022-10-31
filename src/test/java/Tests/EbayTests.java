@@ -32,7 +32,7 @@ public class EbayTests extends TestInit {
         ebayHomePage.womenShoes().click();
         ebayHomePage.getLogo();
 
-
+driver.quit();
     }
 
     @Test
@@ -40,10 +40,11 @@ public class EbayTests extends TestInit {
         EbayHomePage ebayHomePage = new EbayHomePage(driver);
         openUrl("https://www.ebay.com/");
         ebayHomePage.goToAllCategoty().click();
-        sleep(2);
+        sleep(3);
         ebayHomePage.goToCategoryCollectibles().click();
-        sleep(2);
+        sleep(3);
         ebayHomePage.clickOnSubcategories();
+        driver.quit();
 
         //перевірка відповідності назв підкатегорій у переліку та за посиланням, всередині
         /* ArrayList<String> listOfNames = new ArrayList<>();

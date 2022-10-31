@@ -25,9 +25,10 @@ public class BITests extends TestInit {
 
         for (int j = 0; j < biHomePage.namesAllLinks().size(); j++) {
             biHomePage.namesAllLinks().get(j).click();
-            sleep(5);
+            sleep(2);
             Assert.assertEquals(listNames.get(j), biHomePage.nameInsidePage().getText());
             driver.navigate().back();
+            driver.quit();
         }
     }
 
@@ -45,6 +46,7 @@ public class BITests extends TestInit {
         biHomePage.deleteItem().click();
         sleep(2);
         biHomePage.logo().click();
+        driver.quit();
     }
 
     @Test
@@ -71,6 +73,7 @@ public class BITests extends TestInit {
         sleep(1);
         biHomePage.fieldSortBy();
         biHomePage.fieldSortByNew();
+        driver.quit();
     }
 }
 

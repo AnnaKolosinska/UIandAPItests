@@ -13,16 +13,19 @@ public class VansTest extends TestInit {
 
         openUrl("https://www.vans.co.uk/");
        vansHomePage.allowAll().click();
-        vansHomePage.scroll( 5500);
+        vansHomePage.scroll( 3800);
         sleep(4);
-        vansHomePage.popupClose().click();
-        sleep(4);
+        //vansHomePage.popupClose().click();
+        //sleep(4);
         vansHomePage.kidsGoods().click();
         vansHomePage.getAddToFavourites().forEach(WebElement::click);
         int numbersHearts = vansHomePage.getAddToFavourites().size();
-        sleep(4);
+        sleep(5);
         vansHomePage.getBtnAllFavorites().click();
+        sleep(2);
+        vansHomePage.scroll(5000);
         Assert.assertEquals(vansHomePage.getProductNames().size(), numbersHearts );
+        driver.quit();
     }
 }
 
