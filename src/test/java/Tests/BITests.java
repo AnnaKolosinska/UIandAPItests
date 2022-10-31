@@ -28,8 +28,8 @@ public class BITests extends TestInit {
             sleep(2);
             Assert.assertEquals(listNames.get(j), biHomePage.nameInsidePage().getText());
             driver.navigate().back();
-            driver.quit();
         }
+     driver.quit();
     }
 
     @Test
