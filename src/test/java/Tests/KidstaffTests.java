@@ -99,8 +99,9 @@ public class KidstaffTests extends TestInit {
             //другий цикл клікає на бренд, перевіряємо що на сторінці бренда є назва бренда як у каталозі на головній
             Assert.assertTrue(kidstaffHomePage.getNamePageBrand().getText().contains(listBrands.get(j)));
             driver.navigate().back();
-            driver.quit();
         }
+        //last changes, add quit, fix mistake
+        driver.quit();
     }
 
     @Test(dataProvider = "LoginTestData")
